@@ -21,7 +21,13 @@
     echo 
         '<h2>Project Features - Done</h2>
         
-        <pre></pre>';
+        <pre>
+
+        Local repository
+        * Use Github Desktop to clone your BACS_350 repo
+        * File, Clone repository...
+
+        </pre>';
 
 
     echo 
@@ -29,10 +35,7 @@
 
         <pre>
 
-        Local repository
-        * Use Github Desktop to clone your BACS_350 repo
-        * File, Clone repository...
-
+        
         Pull fresh code
         * Using the Github website pull from Mark-Seaman BACS 350 repo
         * Confirm code on Github
