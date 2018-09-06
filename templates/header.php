@@ -9,7 +9,7 @@
             ?>
 
         </title>
-        <link rel="stylesheet" href="/bacs_350/style.css">
+        <link rel="stylesheet" href="style.css">
 
     </head>
     <body>
@@ -22,4 +22,4 @@
             </h1>
         </header>
         <main>
-            <p>The text content of the page.</p>
+            <p>Remove this placeholder text...</p>
