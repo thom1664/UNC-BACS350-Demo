@@ -50,6 +50,14 @@
             * Use Github Desktop to commit your changes
             * Push to your remote repo
 
+        </pre>';
+
+
+    echo 
+        '<h2>Project Features - To Build</h2>
+
+        <pre>
+
             Simple page
             * Use the simple.php page template to create project/08/index.php
             * Deploy and test
