@@ -4,7 +4,7 @@
     $page_title = "Project #7 - To Do List";
 
     // Include the page start
-    include '/bacs_350/header.php';
+    include 'header.php';
 
     // Include the main page content
     echo 
@@ -27,15 +27,6 @@
         * Use Github Desktop to clone your BACS_350 repo
         * File, Clone repository...
 
-        </pre>';
-
-
-    echo 
-        '<h2>Project Features - To Build</h2>
-
-        <pre>
-
-        
         Pull fresh code
         * Using the Github website pull from Mark-Seaman BACS 350 repo
         * Confirm code on Github
@@ -49,6 +40,15 @@
         * Chrome (local and remote bookmarks)
         * Brackets (source code)
 
+        </pre>';
+
+
+    echo 
+        '<h2>Project Features - To Build</h2>
+
+        <pre>
+
+        
         Simple page
         * Use the simple.php page template to create project/08/index.php
         * Deploy and test
@@ -105,6 +105,6 @@
     </pre>';
 
     // Include the page end
-    include '/bacs_350/footer.php';
+    include 'footer.php';
 
  ?>
