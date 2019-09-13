@@ -4,27 +4,19 @@
         Superhero Project Workshop
     */
 
+    // Get the render_page and render_card functions
+    include 'views.php';
+
+
+    // Set custom settings
     $site_title = 'UNC BACS 350';
+    $page_title = 'Superhero Gallery';
+    $content =
+        render_card("Captain America", "Classic America hero archtype") .
+        render_card("Iron Man", "Billionaire Entrpreneur");
 
-    $page_title = "Superhero Gallery Project Notes";
 
-    $content = '
-        <p>
-            Notes about the superhero project
-        </p>
-        <ul>
-            <li>
-                <a href="..">Other Projects</a>
-            </li>
-            <li>
-                <a href="https://shrinking-world.com/unc/bacs350/project/03">Project Instructions</a>
-            </li>
-        </ul>
-
-    ';
-
-    include '../../views.php';
-
+    // Create HTML and output the page
     echo render_page($site_title, $page_title, $content);
 
 ?>
