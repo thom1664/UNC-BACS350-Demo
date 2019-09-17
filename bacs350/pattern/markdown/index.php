@@ -2,7 +2,6 @@
 
     // Bring in the Markdown library
     require_once 'Parsedown.php';
-    require_once 'views.php';
 
 
     // Read Markdown Text from file
@@ -16,6 +15,6 @@
 
 
     // Display the HTML in the page
-//    echo $content;
-    echo render_page('UNC BACS 350', "Markdown Document", $content);
+    echo $content;
+
 ?>

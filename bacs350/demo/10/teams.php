@@ -6,7 +6,7 @@
 
 
     // Read Markdown Text from file
-    $path = "markdown.md";
+    $path = "teams.md";
     $markdown = file_get_contents($path);
 
 
@@ -17,5 +17,5 @@
 
     // Display the HTML in the page
 //    echo $content;
-    echo render_page('UNC BACS 350', "Markdown Document", $content);
+    echo render_page('UNC BACS 350', "Designer Teams", $content);
 ?>
