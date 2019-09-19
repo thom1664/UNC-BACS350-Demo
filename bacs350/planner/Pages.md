@@ -1,3 +1,8 @@
+[Planner](/bacs350/planner)
+
+![Bear Logo](/bacs350/images/Bear_Logo.png)
+
+
 ## Project Requirements
 
 ### File Structure
@@ -43,6 +48,5 @@
 * Table of Projects (instructions link, my page link)
 * List Skills (instructions link)
 * To Do List (bullet list with 10 items)
-* Accomplished (completed items with date done)
-* Github Repos - my code, instructor code
+* Github Repos - student code, instructor code
 

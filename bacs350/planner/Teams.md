@@ -1,3 +1,8 @@
+[Planner](/bacs350/planner)
+
+![Bear Logo](/bacs350/images/Bear_Logo.png)
+
+
 # Design Teams  9-16
 
     21  Kacie Atchison      atch1788@bears.unco.edu     https://moogmunch.com

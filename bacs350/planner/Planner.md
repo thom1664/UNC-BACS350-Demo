@@ -19,13 +19,11 @@ The following patterns are used in this planner app.
 * Skill 4 - Share Code from Others
 
 
-
-
 ## Related Documents
 * [Project Instructions](https://shrinking-world.com/unc/bacs350/project/04)
-* [Project Teams](teams.php)
+* [Project Teams](doc.php?doc=Teams.md)
 * [Markdown Design Pattern](../pattern/markdown)
 * [Stylesheet](style.css)
-* [To Do List](todo.php)
-* [Design Reviews](review.php)
-* [Project Pages](pages.php)
+* [To Do List](doc.php?doc=ToDo.md)
+* [Design Reviews](doc.php?doc=DesignReview.md)
+* [Project Pages](doc.php?doc=Pages.md)

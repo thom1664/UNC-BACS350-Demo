@@ -69,3 +69,16 @@ pre {
     color: white;
     background-color: #0E3D65;
 }
+
+.orange {
+    color: orange;
+}
+
+.panel {
+    border: 5px solid #0E3D65;
+    box-shadow: 2px 2px 5px black;
+    margin: 3em;
+    padding: 2em;
+}
+
+

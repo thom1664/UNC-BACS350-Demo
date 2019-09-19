@@ -1,4 +1,4 @@
-[Home Page](/bacs350)
+[Planner](/bacs350/planner)
 
 ![Bear Logo](/bacs350/images/Bear_Logo.png)
 
