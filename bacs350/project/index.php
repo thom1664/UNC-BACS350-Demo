@@ -18,10 +18,16 @@
         
         <ul>
             <li>
-                <a href="01">Project #1 - Setup Web Hosting</a>
+                <a href="/">Project #1 - Setup Web Hosting - WordPress Blog</a>
             </li>
             <li>
-                <a href="02">Project #2 - Page Template</a>
+                <a href="..">Project #2 - Page Template - Home Page</a>
+            </li>
+            <li>
+                <a href="../superhero">Project #3 - Render Page - Superhero Gallery</a>
+            </li>
+            <li>
+                <a href="../planner">Project #4 - Markdown Docs - Project Planner</a>
             </li>
         </ul>
     ';

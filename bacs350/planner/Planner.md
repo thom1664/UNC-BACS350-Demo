@@ -1,10 +1,5 @@
 # Project #4 - Project Planner
 
-* [Project Instructions](https://shrinking-world.com/unc/bacs350/project/04)
-* [Project Teams](teams.php)
-* [Markdown Design Pattern](../pattern/markdown)
-* [Stylesheet](style.css)
-* [To Do List](todo.php)
 
 ## Goals
 
@@ -12,59 +7,25 @@ Build a project planner page that supports your development projects.
 
 
 ### Design Patterns
+The following patterns are used in this planner app.
+
 * Read Files
 * Display PHP Source Code
 * Display Markdown Documents
 
 
 ### Demonstrated Skills
-* Skill 3 - Github
+* Skill 3 - Version Control
+* Skill 4 - Share Code from Others
 
 
-## Project Requirements
-
-### File Structure
-
-* bacs350/
-    * index.php
-    * superhero/
-        * index.php
-        * views.php
-        * style.css
-    * planner/
-        * index.php
-        * views.php
-        * style.css
-    * skills/
-        * index.html
-        * bluehost.png
-        * wordpress.png
-        * ftp-site-manager.png
-        * ftp-dirs.png
-        * ftp-files.png
-        * ... more images
 
 
-### Content of New Pages
-
-#### bacs350/index.html
-
-* Headline: "Your Name" Home Page
-* Profile Photo
-* Sensei Class Website
-    * Sensei Home Page link
-    * Skills link
-    * Projects link
-    * Canvas
-    * Github Repo
-    * Instructor Repo
-
-
-#### bacs350/planner/index.php
-
-* Headline: "Your Name" Project Planner
-* Table of Projects (instructions link, my page link)
-* List Skills (instructions link)
-* To Do List (bullet list with 10 items)
-* Accomplished (completed items with date done)
-* Github Repos - my code, instructor code
+## Related Documents
+* [Project Instructions](https://shrinking-world.com/unc/bacs350/project/04)
+* [Project Teams](teams.php)
+* [Markdown Design Pattern](../pattern/markdown)
+* [Stylesheet](style.css)
+* [To Do List](todo.php)
+* [Design Reviews](review.php)
+* [Project Pages](pages.php)
