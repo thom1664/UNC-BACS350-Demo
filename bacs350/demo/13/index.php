@@ -1,67 +1,43 @@
 <?php
 
-    // get_file_list
-    function get_file_list($path) {
-        $files = array();
-        if (!is_dir($path)) { return $files; }
-
-        $items = scandir($path);
-        foreach ($items as $item) {
-             $item_path = $path . DIRECTORY_SEPARATOR . $item;
-             if (is_file($item_path)) {
-                 $files[] = $item_path;
-             }
-        }
-        return $files;
-    }
-
-
-    // get_dir_list
-    function get_dir_list($path) {
-        $files = array();
-        if (!is_dir($path)) { return $files; }
-
-        $items = scandir($path);
-        foreach ($items as $item) {
-             $item_path = $path . DIRECTORY_SEPARATOR . $item;
-             if (is_dir($item_path)) {
-                 $files[] = $item_path;
-             }
-        }
-        return $files;
-    }
-
-
-    // render_list -- Create a bullet list in HTML
-    function render_list($list) {
-        $s = '<ul>';
-        foreach($list as $i) {
-            $s .= "<li>$i</li>";
-        }
-        $s .= '</ul>';
-        return $s;
-    }
+    // Bring in key functions
+    require 'views.php';
+    require 'files.php';
 
 
     // Show the directories in "bacs350/demo"
-    $path = '..';
+    $path = '../..';
     
+    
+    // ------------------------------------------
+    // DIRECTORIES
 
-    // Get the directories in the "bacs350/demo"
+    // Get the directories in the "bacs350"
     $dirs = get_dir_list($path);
 
+    //$dlist = '<h3>DIRECTORIES</h3>' . render_list($dirs);
+    $dlist = '<h3>DIRECTORIES</h3>' . render_links($dirs);
+    
+    
+    // ------------------------------------------
+    // FILES
 
-    // Create a list
-    $list = render_list($dirs);
-    
-    
-    // Create some text
+    // Get the files in the "bacs350"
+    $files = get_file_list($path);
+
+    //$flist = '<h3>FILES</h3>' . render_list($files);
+    $flist = '<h3>FILES</h3>' . render_links($files);
+   
+
+    // ------------------------------------------
+    // PAGE
+
     $text = '<h2>Directories in bacs350/demo</h2>
         <p>This demo shows how to list all of the demos.</p>
         <p>Directory Path = ' . $path;
 
 
     // Put the text and the directory list out
-    echo $text . $list;
+    echo $text . $flist . $dlist;
 
 ?>
