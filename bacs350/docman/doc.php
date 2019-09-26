@@ -13,12 +13,16 @@
     require_once 'views.php';
 
 
+    // Link to Home
+    $home = '<a href=".">Other Documents</a>';
+
+
     // Read Markdown Text from file
     $text = render_markdown($doc);
     $content = render_card($doc, $text);
 
 
     // Display the HTML in the page
-    echo render_page('Seaman Notes', "Document Manager", $content);
+    echo render_page('Seaman Notes', "Document Manager", $home . $content);
 
 ?>

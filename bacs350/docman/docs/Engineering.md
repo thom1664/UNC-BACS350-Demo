@@ -2,9 +2,14 @@
 
 Notes for creating the BACS 350 Project #5 - Document Manager
 
+---
 
 ## Tasks To Do
+* Plan out Milestone #4 - Lessons
+* Plan out Milestone #5 - Design Patterns
 
+
+---
 
 ## Tasks Done
 
@@ -40,7 +45,7 @@ Notes for creating the BACS 350 Project #5 - Document Manager
 * Commit changes to UNC-BACS350-Demo
 
 
-### Milestone #3 - Document Manager Style
+### Milestone #3 - Document Manager Style - 9-26-19
 
 * Add render_page() logic
 * Simplify code logic in index.php
@@ -49,6 +54,11 @@ Notes for creating the BACS 350 Project #5 - Document Manager
 * [Test all changes](doc.php?doc=docs/Test.md)
 * Record all task history in Engineering.md (Milestone 3)
 * Commit changes to UNC-BACS350-Demo
+* Create orange subheadings
+* Create horizontal lines
+* Link from doc.php to index.php
+* Build project description in docs/DocMan.md
+* Create ClassPrep.md
 
 
 ### Milestone #4 - Add Lessons
