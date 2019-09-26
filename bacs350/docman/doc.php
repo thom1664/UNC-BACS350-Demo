@@ -6,7 +6,7 @@
 
     $doc = $_GET['doc'];
     $page = $_SERVER['REQUEST_URI'];
-    $doc_label = "<div class=orange>Reading document  DOC: $doc. Loading page URL: $page.</div>";
+    $doc_label = "<p>" . $doc . "</p>";
 
 
     // Use the views code
@@ -14,11 +14,11 @@
 
 
     // Read Markdown Text from file
-    $content = render_markdown($doc);
-    $panel = '<div class="panel">' . $content . '</div>';
+    $text = render_markdown($doc);
+    $content = render_card($doc, $text);
 
 
     // Display the HTML in the page
-    echo render_page('Seaman Notes', "Document Manager", $doc_label . $panel);
+    echo render_page('Seaman Notes', "Document Manager", $content);
 
 ?>

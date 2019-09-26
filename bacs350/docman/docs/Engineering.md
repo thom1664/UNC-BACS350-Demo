@@ -31,17 +31,31 @@ Notes for creating the BACS 350 Project #5 - Document Manager
 * Use planner code to build doc.php
 * Select Markdown doc for display
 * Create Markdown.md
-* Create DocMan.md
 * [Test locally](http://localhost/bacs350/docman)
-* Deploy to server
 * [Test remotely](https://unco-bacs.org/bacs350/docman)
+* Create Docs.md
+* Add description text to index.php
+* Create Test.md for testing
 * Record all task history in Engineering.md (Milestone 2)
 * Commit changes to UNC-BACS350-Demo
-*
 
 
 ### Milestone #3 - Document Manager Style
 
 * Add render_page() logic
 * Simplify code logic in index.php
+* Use style.css from planner
+* Reset page styles to change appearance
+* [Test all changes](doc.php?doc=docs/Test.md)
+* Record all task history in Engineering.md (Milestone 3)
+* Commit changes to UNC-BACS350-Demo
 
+
+### Milestone #4 - Add Lessons
+
+* 
+
+
+### Milestone #5 - Add Design Patterns
+
+* 

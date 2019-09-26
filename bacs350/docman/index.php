@@ -22,13 +22,15 @@
 
     // Page Intro
     $text = render_markdown('Docs.md');
+    
 
-
-    // Make Panel
-    $panel = '<div class="panel">' . $text . $file_list . '</div>';
+    // Card with docs
+    $title = 'Document List';
+    $body = $file_list;
+    $card = render_card($title, $body);
 
 
     // Display the HTML in the page
-    echo render_page('Seaman Notes', "Document Manager", $panel);
+    echo render_page('Seaman Notes', "Document Manager", $card);
 
 ?>
