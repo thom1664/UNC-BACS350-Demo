@@ -41,18 +41,26 @@ Create your own look that applies only to Document Manager App (docman).
 * Header layout
 
 
-## Requirements
-
+## Development Process
 * Work with partner (assigned teammate)
-* Build new app to work within brain (bacs350/docman)
-* Create a folder for markdown documents (bacs350/docman/docs)
 * Commit all changes (at least 5 new commits)
-* All pages must validate
+* Build project as three Milestones
+    * Milestone #1 - Simple Directory Listing
+    * Milestone #2 - Document Browser
+    * Milestone #3 - Document Manager Style
+    
+## Review Your Work
 * Reviews will be done by producing a Markdown document
 * Review your partner's website "look and feel"
 * Review your partner's code (using Github repo)
-* Work with partner to get changes made
 * Review the work to produce (before and after snapshots)
+* Work with partner to get changes made
+
+
+## Requirements
+* App runs at **bacs350/docman**
+* Markdown documents are in **bacs350/docman/docs**
 * The top "notes" page will show an Index of hyperlinks
 * A "doc.php" will display the selected document
+* All pages must validate
 
