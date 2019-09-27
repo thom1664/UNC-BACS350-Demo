@@ -2,8 +2,18 @@
 
 ## Week 5 - Document Manager
 
+Needed Skills
 
-## Artifacts
+* Versions Control - My Code, Sharing with Others
+* Listing a directory
+* Building a list of directory contents
+* Building list of hyperlinks
+* Page to display documents
+* Custom styles
+* Page and card rendering
+
+
+### Artifacts
 
 * Project (/unc/bacs350/project/)
     * 05 - Document App
@@ -23,7 +33,7 @@
 
 ---
 
-## Lesson Plans
+### Lesson Plans
 
 Mon, 9-23 - Lesson 12 - Document Manager
     
