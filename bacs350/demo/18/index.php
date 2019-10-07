@@ -6,16 +6,16 @@
     execution time.
     */
 
-// $port = '3306';
-// $dbname = 'uncobacs_subscribers';
-// $db_connect = "mysql:host=localhost:$port;dbname=$dbname";
-// $username = 'uncobacs_350';
-// $password = 'BACS_350';
-// $db = new PDO($db_connect, $username, $password);
-//
-//
-// echo '<h1>Success 1: Connect to database</h1>';
-//
+ $port = '3306';
+ $dbname = 'uncobacs_subscribers';
+ $db_connect = "mysql:host=localhost:$port;dbname=$dbname";
+ $username = 'uncobacs_350';
+ $password = 'BACS_350';
+ $db = new PDO($db_connect, $username, $password);
+
+
+ echo '<h1>Success 1: Connect to database</h1>';
+
 //
 // // SQL SELECT
 //
