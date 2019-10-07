@@ -107,6 +107,27 @@
 
 
 <!--
+
+    PHP Code for more efficient CRUD
+    
+    // Create an HTML list on the output
+    function render_subscribers($subscribers) {
+        echo '<p>Subscribers</p><ul>';
+        foreach($subscribers as $row) {
+            echo "<li><b>$row[name]</b> - email: $row[email]</li>";
+        }
+        echo '</ul>';
+    }
+    
+    
+    require 'subscribers.php';
+    
+    $subscribers = add_subscriber($db, 'FDR', 'fdr@us.gov');
+    
+    echo render_subscribers(list_subscribers ($db));
+    
+    delete_subscriber($db, 6)
+
 -->
 
 <p>This page was successful. Take a screen shot</p>
