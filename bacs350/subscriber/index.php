@@ -1,24 +1,29 @@
-<h1>Subscriber Database</h1>
+<?php
 
-<p>This page demonstrates a connection to an actual database at Bluehost.</p>
+    // Code to define functions
+    require_once 'views.php';
+    require_once 'subscriber_views.php';
+    require_once 'subscriber_db.php';
 
-<h2>Step 1 - Simple page</h2>
 
-<p>
-    <b></b> Start by building and debugging a page that looks like this one.
-    Get this working first!
-</p>
-<p>
-    <a href="step1.php">Subscribers Page</a>
-</p>
+    // List subscriber records
+    $list = render_subscribers(list_subscribers ($db));
 
-<h2>Step 2 - Normal page</h2>
+    
+    // Button to go to other views
+    $add_button = '<a href="insert.php">Add Subscriber</a>';
 
-<p>
-    The simple solution will duplicate a lot of code
-    on a real website so it is not suitable for production websites. Build functions
-    for all of the key operations that should be done.
-</p>
-<p>
-    <a href="step2.php">Subscribers Page</a>
-</p>
+    
+    $intro = '
+        <p>
+            This email list gives you access to big ideas and deep thoughts.
+        </p>
+        <p>
+            Visit the <a href="https://seamanslog.com">Seaman\'s Log</a> site now to start reading.
+        </p>
+    ';
+    $content = "$intro $list $add_button";
+
+    // Show the page
+    echo render_page('UNC BACS 350', "Seaman's List Subscribers", $content);
+?>
