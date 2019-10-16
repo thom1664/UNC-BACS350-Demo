@@ -4,10 +4,10 @@
     require_once 'superhero_db.php';
 
     // Get the email of the record to delete
-    $email = filter_input(INPUT_GET, 'email');
+    $id = filter_input(INPUT_GET, 'id');
 
     // Attempt to remove the record
-    delete_superhero($db, $email);
+    delete_superhero($db, $id);
 
     // Return to the list
     header("Location: index.php");
