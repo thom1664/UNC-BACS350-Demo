@@ -8,10 +8,23 @@
         $title = 'Add Note';
         $body = '
             <form action="insert.php" method="get">
-                <p><label>Date:</label> &nbsp; <input type="date" name="date"></p>
-                <p><label>Title:</label> &nbsp; <input type="text" name="title"></p>
-                <p><label>Text:</label> &nbsp; <textarea name="body">Blank</textarea></p>
-                <p><input class="button" type="submit" value="Add Note"/></p>
+                <table class="table table-hover">
+                    <tr>
+                        <td><label>Date:</label></td>
+                        <td><input type="date" name="date"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Title:</label></td>
+                        <td><input type="text" name="title"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Body:</label></td>
+                        <td><textarea name="body" placeholder="Type text here"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><button class="button">Save Record</button></td>
+                    </tr>
+                </table>
             </form>
             ';
         return render_card($title, $body);
@@ -28,8 +41,10 @@
             $body = "
                 <p>Note #$row[id]. $title</p>
                 <p>$row[body]</p>
-                <p><a href=$edit_href>Edit Record</a></p>
-                <p><a href=$delete_href>Delete Record</a></p>";
+                <p>
+                    <a class='button' href='$edit_href'>Edit</a>
+                    <a class='button' href='$delete_href'>Delete</a>
+                </p>";
             $html .= render_card($title, $body);
         }
         return $html;
@@ -40,18 +55,32 @@
     function edit_note_form($record) {
         $id    = $record['id'];
         $date  = $record['date'];
-        $title  = $record['title'];
-        $body = $record['body'];
-        return '
-            <h3>Edit note</h3>
+        $title = $record['title'];
+        $body  = $record['body'];
+        $card_title = "Edit Note";
+        $card_body = '
             <form action="update.php" method="post">
-                <p><label>Date:</label> &nbsp; <input type="date" name="date" value="' . $date . '"></p>
-                <p><label>Title:</label> &nbsp; <input type="text" name="title" value="' . $title . '"></p>
-                <p><label>Body:</label> &nbsp; <textarea name="body">' . $body . '</textarea></p>
-                <p><input type="submit" value="Save Record"/></p>
+                <table class="table table-hover">
+                    <tr>
+                        <td><label>Date:</label></td>
+                        <td><input type="date" name="date" value="' . $date . '"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Title:</label></td>
+                        <td><input type="text" name="title" value="' . $title . '"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Body:</label></td>
+                        <td><textarea name="body">' . $body . '</textarea></td>
+                    </tr>
+                    <tr>
+                        <td><button class="button">Save Record</button></td>
+                    </tr>
+                </table>
                 <input type="hidden" name="id" value="' . $id . '">
             </form>
         ';
+        return render_card($card_title, $card_body);
     }
     
 ?>

@@ -25,10 +25,7 @@
         $edit_form = edit_note_form($note);
 
         // Display the HTML in the page
-        $intro = 'Enter the data for your note';
-        $content = "$intro $list $edit_form $clear_button";
-
-        echo render_page('UNC BACS 350', "Edit Note", $content);
+        echo render_page('UNC BACS 350', "Edit Note", $edit_form);
     }
     else {
         
@@ -37,7 +34,6 @@
         {
             header("Location: index.php");
         };
-        header("Location: index.php");
     }
  
 ?>

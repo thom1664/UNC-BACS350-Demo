@@ -8,23 +8,21 @@
 
     // Pick out the inputs
     $title = filter_input(INPUT_GET, 'title');
-    $text = filter_input(INPUT_GET, 'body');
+    $body = filter_input(INPUT_GET, 'body');
     $date = filter_input(INPUT_GET, 'date');
 
-    if ($title == '' || $text == '' || $date == '') {
+    if ($title == '' || $body == '' || $date == '') {
         
         // Form view to add notes
         $add_form = add_note_form();
 
 
         // Button to clear
-        $clear_button = '<a href="delete.php">Reset Notes</a>';
+        $clear_button = '<a class="button" href="delete.php">Reset Notes</a>';
 
 
         // Display the HTML in the page
-        $intro = 'Enter the data for your note';
-        $content = "$intro $list $add_form $clear_button";
-
+        $content = "$add_form $clear_button";
         echo render_page('UNC BACS 350', "Add Note", $content);
     }
     else {

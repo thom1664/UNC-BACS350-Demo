@@ -52,7 +52,7 @@
     // render_card -- build HTML text for a card
     function render_card($title, $body) {
         return '
-            <div class="card">
+            <div class="card card-wide">
                 <div class="card-header">
                     ' . $title . '
                 </div>

@@ -5,7 +5,7 @@
     ------------------------------- */
 
     // Add a new record
-    function add_note($db, $title, $text, $date) {
+    function add_note($db, $title, $body, $date) {
         try {
             $query = "INSERT INTO notes (title, body, date) VALUES (:title, :body, :date);";
             $statement = $db->prepare($query);
@@ -73,6 +73,33 @@
             die();
         }
     }
+
+
+    // Update the database
+    function update_note ($db, $id, $title, $body, $date) {
+        try {
+            // Modify database row
+            $query = "UPDATE notes SET title=:title, body=:body, date=:date WHERE id = :id";
+            $statement = $db->prepare($query);
+
+            $statement->bindValue(':id', $id);
+            $statement->bindValue(':title', $title);
+            $statement->bindValue(':body', $body);
+            $statement->bindValue(':date', $date);
+
+            $statement->execute();
+            $statement->closeCursor();
+
+            return true;
+        } catch (PDOException $e) {
+            $error_message = $e->getMessage();
+            echo "<p>Error: $error_message</p>";
+            die();
+        }
+        
+    }
+
+
 
 
     /* -------------------------------

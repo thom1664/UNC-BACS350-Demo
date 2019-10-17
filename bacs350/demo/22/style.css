@@ -51,10 +51,18 @@ h1 {
 /*    border: 2px solid #F6B018;;*/
 /*}*/
 
+input {
+    width: 80%;
+}
+
 pre {
     border: 1px solid #0E3D65;
     padding: 1em;
     margin: 2em;
+}
+
+textarea {
+    width: 80%;
 }
 
 .button {
@@ -71,6 +79,10 @@ pre {
     border: 1px solid #0E3D65;
     width: 40%;
     float: left;
+}
+
+.card-wide {
+    width: 80%;
 }
 
 .card-header {
