@@ -4,10 +4,10 @@
     require_once 'views.php';
     require_once 'notes_views.php';
     require_once 'notes_db.php';
-    require_once 'log.php';
+//    require_once 'log.php';
 
     // Log this page hit
-    add_log($log, "notes/index.php page loaded");
+//    add_log($log, "notes/index.php page loaded");
 
 
     // List subscriber records
