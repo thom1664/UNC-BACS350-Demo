@@ -1,31 +1,31 @@
 <?php
-    
-    // Bring in rendering functions
-    require_once 'views.php';
 
+    header("Pragma: no-cache");
+    header("Expires: 0");
+    header("Cache-Control: no-store, no-cache, must-revalidate");
 
-    // Display the page content
-    $demo = '<p>' . render_button('Other Demos', '..'). '</p>';
-
-    $happy = '<img src="happy.jpg" alt="happy" width="100">';
-    $happy_text = '<p>This is a very happy face</p>';
-    $sad = '<img src="sad.jpg" alt="sad" width="100">';
-    $sad_text = '<p>This is a very sad face</p>';
-
-    $card1 = render_card("Happy Face", "$happy_text $happy");
-    $card2 = render_card("Sad Face", "$sad_text $sad");
-
-    $content = "$demo $card1 $card2";
-
-
-    // Create main part of page content
-    $settings = array(
-        "site_title" => "UNC BACS 350",
-        "page_title" => "Demo 25 - Page Templates", 
-        "logo"       => "Bear.png",
-        "style"      => 'style.css',
-        "content"    => $content);
-
-    echo render_page($settings);
+    echo '
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>Page Not Cached</title>
+                <link rel="stylesheet" href="../../unc.css">
+            </head>
+            <body>
+                <header>
+                    <h1>Demo 25 - Avoid Caching</h1>
+                </header>
+                <main>
+                    <h2>This page is not cached</h2>
+                    <p>
+                        Note the header statements at the beginning of the file.
+                        This must be executed before any HTML output is produced.
+                    </p>
+                    
+                </main>
+            </body>
+        </html>
+    ';
 
 ?>

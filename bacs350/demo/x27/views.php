@@ -28,6 +28,18 @@
     }
 
 
+    // render_projects -- show the projects template
+    function render_projects($title, $body) {
+        return render_template('templates/projects.html', array());
+    }  
+
+
+    // render_skills -- show the skills template
+    function render_skills($title, $body) {
+        return render_template('templates/skills.html', array());
+    }  
+
+
     // render_template -- Convert template file using the settings
     function render_template($template, $settings) {
         $text = file_get_contents($template); 

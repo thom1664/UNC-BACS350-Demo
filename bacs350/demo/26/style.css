@@ -1,89 +1,89 @@
-/*
-    E L E M E N T S
-*/
-
 body {
-    font-size: 18px;
-    color: #0E3D65;
-    margin: 20px;
-    padding: 10px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-h1,
-h2,
-h3 {
-    color: #0E3D65;
-    margin: 10px;
-    padding: 10px;
-}
-
-h3 {
-    color: #0E3D65;
+    padding: 2em;
 }
 
 header {
-    border: 4px solid #0E3D65;
-    background-color: #F6B018;
-    border-radius: 20px;
+    border: 5px solid #F6B018;
+    background-color: #0E3D65;
+    font-family: sans-serif;
+    padding: .5em;
+}
+
+header a {
+    color: white;
+}
+
+header a:hover {
+    color: #F6B018;
+}
+
+header h1 {
+    color: #F6B018;
+    border: none;
+    padding: 0;
+    margin: 20px 0;
+    box-shadow: none;
+    text-align: left;
+}
+
+header h2 {
+    color: white;
+    background-color: #0E3D65;
+    box-shadow: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+
+}
+
+header img {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
     color: #0E3D65;
 }
 
-
-header img {
-    box-shadow: none;
-    border-radius: 20px;
-    margin: 20px;
-    width: 100px;
-    float: right;
-}
-
-li {
-    margin: 10px;
-}
-
-p {
-    margin: 10px;
+input {
+    width: 80%;
 }
 
 pre {
-    margin: 10px;
-    padding: 10px;
-    box-shadow: 2px 2px 5px gray;
-    border: 1px solid black;
-    background-color: #eeeeee;
+    border: 1px solid #0E3D65;
+    padding: 1em;
+    margin: 2em;
 }
 
-td {
-    padding-right: 30px;
+textarea {
+    width: 80%;
+    height: 50em;
 }
 
-
-/*
-    C L A S S E S
-*/
-
-.btn {
-    background-color: #F6B018;
+.button {
     border: 3px solid #0E3D65;
-    margin: 10px;
-    padding: 10px;
     color: #0E3D65;
-    font-weight: 900;
+    background-color: #F6B018;
     border-radius: 10px;
-    font-size: 16px;
+    padding: 10px;
+    margin: 1em;
 }
 
 .card {
-    background-color: #ffffff;
-    border: 5px solid #F6B018;
-    box-shadow: 2px 2px 5px gray;
-    padding: 20px;
     margin: 20px;
-    float: left;
+    border: 1px solid #0E3D65;
     width: 40%;
+    float: left;
 }
 
-.user {
-    float: right;
+.card-wide {
+    width: 80%;
+}
+
+.card-header {
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: #0E3D65;
 }

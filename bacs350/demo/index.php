@@ -96,13 +96,16 @@
                 <a href="24">Demo #24 - Review App</a>
             </li>
             <li>
-                <a href="25">Demo #25 - Page Template HTML</a>
+                <a href="25">Demo #25 - Avoid Page Caching</a>
             </li>
             <li>
-                <a href="26">Demo #29 - User Admin App</a>
+                <a href="26">Demo #26 - Page Template HTML</a>
             </li>
             <li>
-                <a href="27">Demo #27 - User Admin Code</a>
+                <a href="27">Demo #27 - Component Templates</a>
+            </li>
+            <li>
+                <a href="28">Demo #28 - MVC Pattern</a>
             </li>
         </ul>
     ';
