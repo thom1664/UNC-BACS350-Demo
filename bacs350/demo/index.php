@@ -96,7 +96,7 @@
                 <a href="24">Demo #24 - Review App</a>
             </li>
             <li>
-                <a href="25">Demo #25 - No Demo</a>
+                <a href="25">Demo #25 - Page Template HTML</a>
             </li>
             <li>
                 <a href="26">Demo #29 - User Admin App</a>
