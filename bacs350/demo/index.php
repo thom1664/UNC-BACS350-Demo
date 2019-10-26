@@ -95,6 +95,15 @@
             <li>
                 <a href="24">Demo #24 - Review App</a>
             </li>
+            <li>
+                <a href="25">Demo #25 - No Demo</a>
+            </li>
+            <li>
+                <a href="26">Demo #29 - User Admin App</a>
+            </li>
+            <li>
+                <a href="27">Demo #27 - User Admin Code</a>
+            </li>
         </ul>
     ';
 
