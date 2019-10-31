@@ -6,47 +6,19 @@
     // add_review_form -- Create an HTML form to add record.
     // Fields: designer, url, report, score, date
     function add_review_form() {
-        $title = 'Add Review';
-        $body = '
-            <form action="insert.php" method="get">
-                <table class="table table-hover">
-                    <tr>
-                        <td style="width:300px"><label>Date:</label></td>
-                        <td><input type="date" name="date"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Designer:</label></td>
-                        <td><input type="text" name="designer"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Page to Review:</label></td>
-                        <td><input type="url" name="url"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Review Score:</label></td>
-                        <td><input type="number" name="score"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Review Summary:</label></td>
-                        <td><textarea name="report"> Requirements
-                        
-* Main page is "bacs350/index.php"
-* Data Views (list, detail, add, edit, delete)
-* Create and modify markdown content
-* Run slide show in new tab
-* Custom styles for your app
-* Log all pages loaded
-* Use design patterns to avoid duplication
-* Page HTML and CSS validate
-</textarea></td>
-                    </tr>
-                    <tr>
-                        <td><button class="button">Save Review</button></td>
-                    </tr>
-                </table>
-            </form>
-            ';
-        return render_card($title, $body);
+        $title = '<h2>Add New Design Review</h2>';
+        $add_form = add_review_form();
+        $content = "$title $add_form";
+
+        // Create main part of page content
+        $settings = array(
+            "site_title" => "UNC BACS 350",
+            "page_title" => "Design Review App", 
+            "logo"       => "Bear.png",
+            "style"      => 'style.css',
+            "content"    => $content);
+
+        return render_page($settings);
     }
 
 
