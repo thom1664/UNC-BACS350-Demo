@@ -35,6 +35,18 @@
             <li>
                 <a href="../subscriber">Project #6 - Subscriber Database</a>
             </li>
+            <li>
+                <a href="../superhero">Project #7 - Superhero Database</a>
+            </li> 
+            <li>
+                <a href="../notes">Project #8 - Notes Database</a>
+            </li> 
+            <li>
+                <a href="../review">Project #9 - Review Manager App</a>
+            </li> 
+            <li>
+                <a href="../slides">Project #10 - Slide Show App</a>
+            </li>
         </ul>
     ';
 

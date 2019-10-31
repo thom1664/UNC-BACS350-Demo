@@ -56,10 +56,13 @@
         foreach($reviews as $row) {
             $delete_href = "delete.php?id=$row[id]";
             $edit_href = "update.php?id=$row[id]";
+            $title = "Review #$row[id]. $row[url]";
             $body = "
-                <p>Review #$row[id]. $row[url]</p>
-                <p>$row[date]</p>
-                <p>Score: $row[score] requirements met</p>
+                <p>Date Completed: $row[date]</p>
+                <p>Designer: $row[designer]</p>
+                <p>Score: $row[score] of 10 requirements met</p>
+                <p>Report Summary:</p>
+                <pre>$row[report]</pre>
                 <p>
                     <a class='button' href='$edit_href'>Edit</a>
                     <a class='button' href='$delete_href'>Delete</a>

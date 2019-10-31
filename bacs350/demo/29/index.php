@@ -10,7 +10,7 @@
     $skills   = render_card("Skills", render_skills());
     $projects = render_card("Projects", render_projects());
 
-    $content = "$demo $skills";
+    $content = "$demo $skills $projects";
 
 
     // Create main part of page content

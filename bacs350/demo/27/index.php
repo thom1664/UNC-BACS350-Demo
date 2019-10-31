@@ -7,10 +7,10 @@
     // Display the page content
     $demo = '<p>' . render_button('Other Demos', '..') . '</p>';
 
-    $skills   = render_card("Skills", render_skills());
-    $projects = render_card("Projects", render_projects());
+    $skills   = render_card("Skills", "Add your skills here");
+    $projects = render_card("Projects", "Add your projects here");
 
-    $content = "$demo $skills";
+    $content = "$demo $skills $projects";
 
 
     // Create main part of page content
