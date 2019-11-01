@@ -9,18 +9,18 @@
     // render_card -- create HTML for visual card
     function render_card($title, $body) {
         $settings = array('title' => $title, 'body' => $body);
-        return render_template('templates/card.html', $settings);
+        return render_template('card.html', $settings);
     }  
 
 
     // render_skills -- show the skills template
     function render_skills($title, $body) {
-        return render_template('templates/skills.html', array());
+        return render_template('skills.html', array());
     }  
 
     // render_projects -- show the projects template
     function render_projects($title, $body) {
-        return render_template('templates/projects.html', array());
+        return render_template('projects.html', array());
     }  
 
 
@@ -35,13 +35,13 @@
         header("Pragma: no-cache");
         header("Expires: 0");
         header("Cache-Control: no-store, no-cache, must-revalidate");
-        return render_template("templates/page.html", $settings);
+        return render_template("page.html", $settings);
     }
 
 
     // render_template -- Convert template file using the settings
     function render_template($template, $settings) {
-        $text = file_get_contents($template); 
+        $text = file_get_contents("templates/" . $template); 
         $text = transform_text($text, $settings);
         return $text;
     }
