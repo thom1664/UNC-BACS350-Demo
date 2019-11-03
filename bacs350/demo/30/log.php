@@ -1,5 +1,8 @@
 <?php
 
+    require_once 'db.php';
+
+
     /* ----------------------------------------------
         This code shows how to hook up a logging utility.
 
@@ -126,7 +129,33 @@
         return $text;     
     }
 
-    
+
+    // Log each page load and display the action
+    function log_page() {
+        $action = filter_input(INPUT_POST, 'action') . filter_input(INPUT_GET, 'action');
+        log_event("(action=$action)");
+    }
+       
+
+    // Record log events with timestamp page and text message
+    function log_event($text) {
+        global $db;
+        add_log ($db, "$_SERVER[PHP_SELF] - $text");
+    }
+
+
+//    function log_handle_actions() {
+//        global $db;
+//        $action = filter_input(INPUT_GET, 'action');
+//        if ($action == 'clear') {
+//            clear_log($db);
+//        }
+//        if ($action == 'show') {
+//            echo '<button class="btn"><a href="log.php?action=clear">Clear Log</a></button>';
+//            echo render_history(query_log($db));
+//        }
+//    }
+
 
     /* ----------------------------------------------
         Controller
@@ -144,66 +173,64 @@
             
     ---------------------------------------------- */
     
-    require_once 'db.php';
+    
 
-
-    // My log list
-    class Log {
-
-        // Database connection
-        private $db;
-
-        function __construct() {
-            $this->db =  connect_database();
-        }
-
-        
-        // CRUD
-        function query() {
-            return query_log($this->db);
-        }
-        
-        function clear() {
-            return clear_log($this->db);
-        }
-           
-        function log($text) {
-            return add_log ($this->db, $text);
-        }
-        
-        function log_page() {
-            $action = filter_input(INPUT_POST, 'action') . filter_input(INPUT_GET, 'action');
-            $this->log ("$_SERVER[PHP_SELF] (action=$action)");
-        }
-        
-        function log_event($page, $event) {
-            $this->log ("$page, $event");
-        }
-        
-        function handle_actions() {
-            $action = filter_input(INPUT_GET, 'action');
-            if ($action == 'add') {
-                $this->log(filter_input(INPUT_GET, 'text'));
-            }
-            if ($action == 'clear') {
-                $this->clear();
-            }
-        }
-        
-        
-        
-        // Views
-        function show_log() {
-            return render_history($this->query());
-        }
-        
-        function show_add($page) {
-            return add_log_form($page);
-        }
-    }
-
-
-    // Create a list object and connect to the database
-    $log = new Log;
-
+//    // My log list
+ // class Log {
+ //
+ // // Database connection
+ // private $db;
+ //
+ // function __construct() {
+ // $this->db = connect_database();
+ // }
+ //
+ //
+ // // CRUD
+ // function query() {
+ // return query_log($this->db);
+ // }
+ //
+ // function clear() {
+ // return clear_log($this->db);
+ // }
+ //
+ // function log($text) {
+ // return add_log ($this->db, $text);
+ // }
+ //
+ // function log_page() {
+ // $action = filter_input(INPUT_POST, 'action') . filter_input(INPUT_GET, 'action');
+ // $this->log ("$_SERVER[PHP_SELF] (action=$action)");
+ // }
+ //
+ // function log_event($page, $event) {
+ // $this->log ("$page, $event");
+ // }
+ //
+ // function handle_actions() {
+ // $action = filter_input(INPUT_GET, 'action');
+ // if ($action == 'add') {
+ // $this->log(filter_input(INPUT_GET, 'text'));
+ // }
+ // if ($action == 'clear') {
+ // $this->clear();
+ // }
+ // }
+ //
+ //
+ //
+ // // Views
+ // function show_log() {
+ // return render_history($this->query());
+ // }
+ //
+ // function show_add($page) {
+ // return add_log_form($page);
+ // }
+ // }
+ //
+ //
+ // // Create a list object and connect to the database
+ // $log = new Log;
 ?>

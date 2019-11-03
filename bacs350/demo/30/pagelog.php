@@ -1,28 +1,31 @@
 <?php
 
     require_once 'views.php';
- 
-    // Handle any page actions required
     require_once 'log.php';
-    $log->handle_actions();
-    $log->log_page();
+
+
+    // Clear the log if requested
+    $action = filter_input(INPUT_GET, 'action');
+    if ($action == 'clear') {
+        clear_log($db);
+    }
+
+
+    // Clear button
+    $home = render_button('Home', 'index.php');
+    $clear = render_button('Clear Log', 'pagelog.php?action=clear');
 
 
     // Show page history
-    $history = $log->show_log();
+    $history = render_history(query_log($db));
   
-
-    // Add form
-    $add = $log->show_add('pagelog.php');
-    $content =  $history . $add;
-
 
     // Show Page
     $settings = array(
-        "site_title" => "BACS 350 Templates",
-        "page_title" => "Display Pages loaded", 
+        "site_title" => "UNC BACS 350 Demo",
+        "page_title" => "Display Pages History", 
         "style"      => 'style.css',
-        "content"    => $content);
+        "content"    => $home . $clear . $history);
 
     echo render_page($settings);
 
