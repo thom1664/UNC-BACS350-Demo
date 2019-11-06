@@ -14,13 +14,13 @@ Building Your App
 * Debug one feature at a time
 * Fix before moving forward
 
+--
 
 ## Software Lifecycle
 * Requirements
 * Design
 * Code
 * Test
-
 
 --
 
@@ -48,7 +48,6 @@ Review:
 * Controller that manages views
 * Page and view templates
 * Standard stylesheet
-
 
 
 ---
