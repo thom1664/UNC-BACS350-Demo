@@ -20,7 +20,7 @@
     // Create main part of page content
     $settings = array(
         "site_title" => "UNC BACS 350 Demo",
-        "page_title" => "Demo 32 - MVC Design Pattern",
+        "page_title" => "Demo 32 - Notes MVC",
         "logo"       => "Bear.png",
         "style"      => 'style.css',
         "content"    => $content);

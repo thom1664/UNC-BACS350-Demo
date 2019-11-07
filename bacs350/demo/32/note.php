@@ -143,17 +143,21 @@
         $html = '';
         foreach($notes as $row) {
 
-            $title = $row['title'];
-            $delete_href = "index.php?id=$row[id]&action=delete";
-            $edit_href = "index.php?id=$row[id]&action=edit";
-            $body = "
-                <p>Note #$row[id]. $title</p>
-                <p>$row[body]</p>
-                <p>
-                    <a class='button' href='$edit_href'>Edit</a>
-                    <a class='button' href='$delete_href'>Delete</a>
-                </p>";
-            $html .= render_card($title, $body);
+//            $title = $row['title'];
+//
+//            $delete_href = "index.php?id=$row[id]&action=delete";
+//            $delete_button = render_button('Delete', $delete_href)
+//
+//            $edit_href = "index.php?id=$row[id]&action=edit";
+//            $edit_button = render_button('Edit', $edit_href)
+//
+//            $body = "
+//                <p>Note #$row[id]. $title</p>
+//                <p>$row[body]</p>
+//                <p>$edit_button $delete_button</p>";
+//            $html .= render_card($title, $body);
+
+            $html .= render_template('note.html', $row);
         }
         return $html;
     }
@@ -162,69 +166,72 @@
     // add_note_form -- Create an HTML form to add record.
     function add_note_view() {
         log_event('Note Add View');                   // Add View
+        return render_template('add.html', array());
 
-        $title = 'Add Note';
-        $body = '
-            <form action="index.php" method="post">
-                <table class="table table-hover">
-                    <tr>
-                        <td><label>Date:</label></td>
-                        <td><input type="date" name="date"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Title:</label></td>
-                        <td><input type="text" name="title"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Body:</label></td>
-                        <td><textarea name="body" placeholder="Type text here"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td><button class="button">Save Record</button></td>
-                    </tr>
-                </table>
-                <input type="hidden" name="action" value="create">
-
-            </form>
-            ';
-        return render_card($title, $body);
+//        $title = 'Add Note';
+//        $body = '
+//            <form action="index.php" method="post">
+//                <table class="table table-hover">
+//                    <tr>
+//                        <td><label>Date:</label></td>
+//                        <td><input type="date" name="date"></td>
+//                    </tr>
+//                    <tr>
+//                        <td><label>Title:</label></td>
+//                        <td><input type="text" name="title"></td>
+//                    </tr>
+//                    <tr>
+//                        <td><label>Body:</label></td>
+//                        <td><textarea name="body" placeholder="Type text here"></textarea></td>
+//                    </tr>
+//                    <tr>
+//                        <td><button class="button">Save Record</button></td>
+//                    </tr>
+//                </table>
+//                <input type="hidden" name="action" value="create">
+//
+//            </form>
+//            ';
+//        return render_card($title, $body);
     }
 
 
     // Show form for adding a record
     function edit_note_view($record) {
         log_event('Note Edit View');                  // Edit View
+        return render_template('edit.html', $record);
 
-        $id    = $record['id'];
-        $date  = $record['date'];
-        $title = $record['title'];
-        $body  = $record['body'];
-        $card_title = "Edit Note";
-        $card_body = '
-            <form action="index.php" method="post">
-                <table class="table table-hover">
-                    <tr>
-                        <td><label>Date:</label></td>
-                        <td><input type="date" name="date" value="' . $date . '"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Title:</label></td>
-                        <td><input type="text" name="title" value="' . $title . '"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Body:</label></td>
-                        <td><textarea name="body">' . $body . '</textarea></td>
-                    </tr>
-                    <tr>
-                        <td><button class="button">Save Record</button></td>
-                    </tr>
-                </table>
-                <input type="hidden" name="id" value="' . $id . '">
-                <input type="hidden" name="action" value="update">
 
-            </form>
-        ';
-        return render_card($card_title, $card_body);
+//        $id = $record['id'];
+// $date = $record['date'];
+// $title = $record['title'];
+// $body = $record['body'];
+// $card_title = "Edit Note";
+// $card_body = '
+// <form action="index.php" method="post">
+    // <table class="table table-hover">
+        // <tr>
+            // <td><label>Date:</label></td>
+            // <td><input type="date" name="date" value="' . $date . '"></td>
+            // </tr>
+        // <tr>
+            // <td><label>Title:</label></td>
+            // <td><input type="text" name="title" value="' . $title . '"></td>
+            // </tr>
+        // <tr>
+            // <td><label>Body:</label></td>
+            // <td><textarea name="body">' . $body . '</textarea></td>
+            // </tr>
+        // <tr>
+            // <td><button class="button">Save Record</button></td>
+            // </tr>
+        // </table>
+    // <input type="hidden" name="id" value="' . $id . '">
+    // <input type="hidden" name="action" value="update">
+    //
+    // </form>
+// ';
+// return render_card($card_title, $card_body);
     }
 
 
