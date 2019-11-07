@@ -1,19 +1,20 @@
 <?php
 
-    require_once 'db.php';
     require_once 'log.php';
     require_once 'note.php';
     require_once 'views.php';
 
 
     // Log the page load
-    log_page($db);
+    log_page();
 
 
     // Display the page content
+    $content = '<div><p>';
     $content .= render_button('Other Demos', '..');
     $content .= render_button('Show Log', 'pagelog.php');
     $content .= render_button('Add Note', 'index.php?action=add');
+    $content .= '</p></div>';
     $content .= handle_actions();
 
 
@@ -26,5 +27,4 @@
         "content"    => $content);
 
     echo render_page($settings);
-
 ?>

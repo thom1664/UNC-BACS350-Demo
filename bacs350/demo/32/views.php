@@ -2,21 +2,7 @@
 
     // render_button -- Show a styled button
     function render_button($text, $url) {
-        return '<button class="button">' . render_link($text, $url) . '</button>';
-    }
-
-
-    // render_card -- create HTML for visual card
-    function render_card($title, $body) {
-        $settings = array('title' => $title, 'body' => $body);
-        return render_template('card.html', $settings);
-    }
-
-
-
-    // render_link -- Create a hyperlink in HTML
-    function render_link($text, $url) {
-        return "<a href=\"$url\">$text</a>";
+        return "<a class=\"button\" href=\"$url\">$text</a>";
     }
 
 
@@ -44,6 +30,5 @@
         }
         return $text;
     }
-
 
 ?>

@@ -11,7 +11,9 @@
      --------------------------- */
 
     // Add a new record
-    function add_note($db, $title, $body, $date) {
+    function add_note() {
+        global $db;
+
         // Pick out the inputs
         $title = filter_input(INPUT_POST, 'title');
         $body = filter_input(INPUT_POST, 'body');
@@ -40,7 +42,9 @@
 
 
     // Lookup Record using ID
-    function get_note($db, $id) {
+    function get_note($id) {
+        global $db;
+
         try {
             $query = "SELECT * FROM notes WHERE id = :id";
             $statement = $db->prepare($query);
@@ -60,8 +64,10 @@
 
 
     // Query for all notes
-    function list_notes ($db) {
-       try {
+    function list_notes () {
+        global $db;
+
+        try {
             $query = "SELECT * FROM notes";
             $statement = $db->prepare($query);
             $statement->execute();
@@ -78,7 +84,9 @@
 
 
     // Delete Database Record
-    function delete_note($db) {
+    function delete_note() {
+        global $db;
+
         $id = filter_input(INPUT_GET, 'id');
         if (!empty($id)) {
             try {
@@ -100,7 +108,8 @@
 
 
     // Update the database
-    function update_note ($db) {
+    function update_note () {
+        global $db;
 
         // Pick out the inputs
         $id = filter_input(INPUT_POST, 'id');
@@ -142,21 +151,6 @@
     function note_list_view($notes) {
         $html = '';
         foreach($notes as $row) {
-
-//            $title = $row['title'];
-//
-//            $delete_href = "index.php?id=$row[id]&action=delete";
-//            $delete_button = render_button('Delete', $delete_href)
-//
-//            $edit_href = "index.php?id=$row[id]&action=edit";
-//            $edit_button = render_button('Edit', $edit_href)
-//
-//            $body = "
-//                <p>Note #$row[id]. $title</p>
-//                <p>$row[body]</p>
-//                <p>$edit_button $delete_button</p>";
-//            $html .= render_card($title, $body);
-
             $html .= render_template('note.html', $row);
         }
         return $html;
@@ -167,32 +161,6 @@
     function add_note_view() {
         log_event('Note Add View');                   // Add View
         return render_template('add.html', array());
-
-//        $title = 'Add Note';
-//        $body = '
-//            <form action="index.php" method="post">
-//                <table class="table table-hover">
-//                    <tr>
-//                        <td><label>Date:</label></td>
-//                        <td><input type="date" name="date"></td>
-//                    </tr>
-//                    <tr>
-//                        <td><label>Title:</label></td>
-//                        <td><input type="text" name="title"></td>
-//                    </tr>
-//                    <tr>
-//                        <td><label>Body:</label></td>
-//                        <td><textarea name="body" placeholder="Type text here"></textarea></td>
-//                    </tr>
-//                    <tr>
-//                        <td><button class="button">Save Record</button></td>
-//                    </tr>
-//                </table>
-//                <input type="hidden" name="action" value="create">
-//
-//            </form>
-//            ';
-//        return render_card($title, $body);
     }
 
 
@@ -200,40 +168,7 @@
     function edit_note_view($record) {
         log_event('Note Edit View');                  // Edit View
         return render_template('edit.html', $record);
-
-
-//        $id = $record['id'];
-// $date = $record['date'];
-// $title = $record['title'];
-// $body = $record['body'];
-// $card_title = "Edit Note";
-// $card_body = '
-// <form action="index.php" method="post">
-    // <table class="table table-hover">
-        // <tr>
-            // <td><label>Date:</label></td>
-            // <td><input type="date" name="date" value="' . $date . '"></td>
-            // </tr>
-        // <tr>
-            // <td><label>Title:</label></td>
-            // <td><input type="text" name="title" value="' . $title . '"></td>
-            // </tr>
-        // <tr>
-            // <td><label>Body:</label></td>
-            // <td><textarea name="body">' . $body . '</textarea></td>
-            // </tr>
-        // <tr>
-            // <td><button class="button">Save Record</button></td>
-            // </tr>
-        // </table>
-    // <input type="hidden" name="id" value="' . $id . '">
-    // <input type="hidden" name="action" value="update">
-    //
-    // </form>
-// ';
-// return render_card($card_title, $card_body);
     }
-
 
 
     /* ---------------------------
@@ -242,18 +177,16 @@
 
     // Handle all action verbs
     function handle_actions() {
-        $id = filter_input(INPUT_GET, 'id');
-        global $db;
 
         // POST
         $action = filter_input(INPUT_POST, 'action');
         if ($action == 'create') {
-            if (add_note($db)) {
+            if (add_note()) {
                 header('Location: index.php');
             }
         }
         if ($action == 'update') {
-            if (update_note($db)) {
+            if (update_note()) {
                 header('Location: index.php');
             }
         }
@@ -261,19 +194,22 @@
         // GET
         $action = filter_input(INPUT_GET, 'action');
         if (empty($action)) {
-            $list = list_notes($db);
+            $list = list_notes();
             return note_list_view($list);
         }
         if ($action == 'delete') {
-            delete_note($db);
+            delete_note();
             header('Location: index.php');
         }
         if ($action == 'add') {
             return add_note_view();
         }
-        if ($action == 'edit' and ! empty($id)) {
-            $record = get_note($db, $id);
-            return edit_note_view($record);
+        if ($action == 'edit') {
+            $id = filter_input(INPUT_GET, 'id');
+            if (! empty($id)) {
+                return edit_note_view(get_note($id));
+            }
+//            header('Location: index.php');
         }
     }
 
