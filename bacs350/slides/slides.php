@@ -11,26 +11,24 @@
      --------------------------- */
 
     // Add a new record
-    function add_note() {
+    function add_slides() {
         global $db;
 
         // Pick out the inputs
         $title = filter_input(INPUT_POST, 'title');
         $body = filter_input(INPUT_POST, 'body');
-        $date = filter_input(INPUT_POST, 'date');
 
-        if (!empty($title) && !empty($body) && !empty($date)) {
+        if (!empty($title) && !empty($body)) {
 
             try {
-                $query = "INSERT INTO notes (title, body, date) VALUES (:title, :body, :date);";
+                $query = "INSERT INTO slides (title, body) VALUES (:title, :body);";
                 $statement = $db->prepare($query);
                 $statement->bindValue(':title', $title);
                 $statement->bindValue(':body', $body);
-                $statement->bindValue(':date', $date);
                 $statement->execute();
                 $statement->closeCursor();
 
-                log_event('Note CREATE');
+                log_event('Slides CREATE');
                 return true;
             } catch (PDOException $e) {
                 $error_message = $e->getMessage();
@@ -42,18 +40,18 @@
 
 
     // Lookup Record using ID
-    function get_note($id) {
+    function get_slides($id) {
         global $db;
 
         try {
-            $query = "SELECT * FROM notes WHERE id = :id";
+            $query = "SELECT * FROM slides WHERE id = :id";
             $statement = $db->prepare($query);
             $statement->bindValue(':id', $id);
             $statement->execute();
             $record = $statement->fetch();
             $statement->closeCursor();
 
-            log_event('Note READ');                       // READ
+            log_event('Slides READ');                       // READ
             return $record;
         } catch (PDOException $e) {
             $error_message = $e->getMessage();
@@ -63,16 +61,16 @@
     }
 
 
-    // Query for all notes
-    function list_notes () {
+    // Query for all slides
+    function list_slides () {
         global $db;
 
         try {
-            $query = "SELECT * FROM notes";
+            $query = "SELECT * FROM slides";
             $statement = $db->prepare($query);
             $statement->execute();
 
-            log_event('Note READ');                       // READ
+            log_event('Slides READ');                       // READ
             return $statement->fetchAll();
         } catch (PDOException $e) {
             $error_message = $e->getMessage();
@@ -84,19 +82,19 @@
 
 
     // Delete Database Record
-    function delete_note() {
+    function delete_slides() {
         global $db;
 
         $id = filter_input(INPUT_GET, 'id');
         if (!empty($id)) {
             try {
-                $query = "DELETE from notes WHERE id = :id";
+                $query = "DELETE from slides WHERE id = :id";
                 $statement = $db->prepare($query);
                 $statement->bindValue(':id', $id);
                 $statement->execute();
                 $statement->closeCursor();
 
-                log_event('Note DELETE');                     // DELETE
+                log_event('Slides DELETE');                     // DELETE
                 return true;
             } catch (PDOException $e) {
                 $error_message = $e->getMessage();
@@ -108,31 +106,29 @@
 
 
     // Update the database
-    function update_note () {
+    function update_slides () {
         global $db;
 
         // Pick out the inputs
         $id = filter_input(INPUT_POST, 'id');
         $title = filter_input(INPUT_POST, 'title');
         $body = filter_input(INPUT_POST, 'body');
-        $date = filter_input(INPUT_POST, 'date');
 
-        if (!empty($id) && !empty($title) && !empty($body) && !empty($date)) {
+        if (!empty($id) && !empty($title) && !empty($body)) {
 
             try {
                 // Modify database row
-                $query = "UPDATE notes SET title=:title, body=:body, date=:date WHERE id = :id";
+                $query = "UPDATE slides SET title=:title, body=:body WHERE id = :id";
                 $statement = $db->prepare($query);
 
                 $statement->bindValue(':id', $id);
                 $statement->bindValue(':title', $title);
                 $statement->bindValue(':body', $body);
-                $statement->bindValue(':date', $date);
 
                 $statement->execute();
                 $statement->closeCursor();
 
-                log_event('Note UPDATE');                     // UPDATE
+                log_event('Slides UPDATE');                     // UPDATE
                 return true;
             } catch (PDOException $e) {
                 $error_message = $e->getMessage();
@@ -148,25 +144,25 @@
      --------------------------- */
 
     // Create an HTML list on the output
-    function note_list_view($notes) {
+    function slides_list_view($slides) {
         $html = '';
-        foreach($notes as $row) {
-            $html .= render_template('note.html', $row);
+        foreach($slides as $row) {
+            $html .= render_template('slides.html', $row);
         }
         return $html;
     }
 
 
-    // add_note_form -- Create an HTML form to add record.
-    function add_note_view() {
-        log_event('Note Add View');                   // Add View
+    // add_slides_form -- Create an HTML form to add record.
+    function add_slides_view() {
+        log_event('Slides Add View');                   // Add View
         return render_template('add.html', array());
     }
 
 
     // Show form for adding a record
-    function edit_note_view($record) {
-        log_event('Note Edit View');                  // Edit View
+    function edit_slides_view($record) {
+        log_event('Slides Edit View');                  // Edit View
         return render_template('edit.html', $record);
     }
 
@@ -181,12 +177,12 @@
         // POST
         $action = filter_input(INPUT_POST, 'action');
         if ($action == 'create') {
-            if (add_note()) {
+            if (add_slides()) {
                 header('Location: index.php');
             }
         }
         if ($action == 'update') {
-            if (update_note()) {
+            if (update_slides()) {
                 header('Location: index.php');
             }
         }
@@ -194,20 +190,20 @@
         // GET
         $action = filter_input(INPUT_GET, 'action');
         if (empty($action)) {
-            $list = list_notes();
-            return note_list_view($list);
+            $list = list_slides();
+            return slides_list_view($list);
         }
         if ($action == 'delete') {
-            delete_note();
+            delete_slides();
             header('Location: index.php');
         }
         if ($action == 'add') {
-            return add_note_view();
+            return add_slides_view();
         }
         if ($action == 'edit') {
             $id = filter_input(INPUT_GET, 'id');
             if (! empty($id)) {
-                return edit_note_view(get_note($id));
+                return edit_slides_view(get_slides($id));
             }
 //            header('Location: index.php');
         }
