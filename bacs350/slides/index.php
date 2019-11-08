@@ -17,6 +17,7 @@
     $content .= '</p></div>';
     $content .= handle_actions();
 
+$content .= "hey";
 
     // Create main part of page content
     $settings = array(
