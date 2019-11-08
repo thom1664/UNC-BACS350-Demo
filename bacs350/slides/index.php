@@ -17,6 +17,9 @@
     $content .= '</p></div>';
     $content .= handle_actions();
 
+    $slides = get_slides(1)['body'];
+    $content .= $slides;
+
 
     // Create main part of page content
     $settings = array(
