@@ -23,17 +23,17 @@ footer {
 h1 {
     margin: 20px;
     padding: 30px;
-    color: #F6B018;
-    background-color: #0E3D65;
-    border: 5px solid #F6B018;
+    color: greenyellow;
+    background-color: red;
+    border: 5px solid aqua;
     text-align: center;
     box-shadow: 2px 2px 5px gray;
 }
 
 h2 {
-    color: #0E3D65;
-    background-color: #F6B018;
-    border: 2px solid #0E3D65;
+    color: lightblue;
+    background-color: lightskyblue;
+    border: 2px solid black;
     text-align: center;
     margin: 10px 20px;
     padding: 10px 20px;
@@ -58,11 +58,11 @@ header a {
 }
 
 header a:hover {
-    color: #F6B018;
+    color: greenyellow;
 }
 
 header h1 {
-    color: #F6B018;
+    color: cyan;
     border: none;
     padding: 0;
     margin: 20px 0;
@@ -72,7 +72,7 @@ header h1 {
 
 header h2 {
     color: white;
-    background-color: #0E3D65;
+    background-color: cyan;
     box-shadow: none;
     text-align: left;
     margin: 0;
@@ -88,7 +88,7 @@ header img {
 
 
 hr {
-    border: 4px solid #F6B018;
+    border: 4px solid red;
 }
 
 input {
@@ -111,10 +111,10 @@ p {
 }
 
 pre {
-    border: 1px solid #F6B018;
-    border-left: 3px solid #F6B018;
-    border-right: 3px solid #F6B018;
-    background-color: #f0f0f0;
+    border: 1px solid yellow;
+    border-left: 3px solid yellow;
+    border-right: 3px solid yellow;
+    background-color: black;
     margin-left: 3em;
     margin-right: 3em;
     padding: 10px 20px;
@@ -125,9 +125,9 @@ pre {
 /* Classes */
 
 .button {
-    border: 3px solid #0E3D65;
-    color: #0E3D65;
-    background-color: #F6B018;
+    border: 3px solid teal;
+    color: orange;
+    background-color: teal;
     border-radius: 10px;
     text-align: center;
     padding: 10px;
@@ -142,7 +142,7 @@ pre {
 
 .card {
     margin: 20px;
-    border: 1px solid #0E3D65;
+    border: 1px solid pink;
     width: 40%;
 }
 
@@ -153,23 +153,23 @@ pre {
 }
 
 .collapse {
-    border: 2px solid #0E3D65;
-    background-color: #eeeeee;
+    border: 2px solid aqua;
+    background-color: ghostwhite;
 }
 
 .collapse-header {
-    border: 1px solid #0E3D65;
-    background-color: #0E3D65;
+    border: 1px solid cyan;
+    background-color: whitesmoke;
     padding: 2px;
 }
 
 .collapse-header button {
-    color: #F6B018;
+    color: yellowgreen;
 }
 
 .collapse-header button:hover {
     color: white;
-    background-color: #0E3D65;
+    background-color: deepskyblue;
 }
 
 .form-error {
@@ -198,7 +198,7 @@ pre {
     padding: 2em;
     box-shadow: 2px 2px 5px grey;
     background-color: #eeeeee;
-    border: 3px solid #0E3D65;
+    border: 3px solid cyan;
     border-radius: 10px;
 }
 

@@ -6,7 +6,7 @@
 
     $site_title = 'UNC BACS 350';
     
-    $page_title = "The Seaman's Brain";
+    $page_title = "The Thompson's Brain";
     
     $content = '
         <p>
