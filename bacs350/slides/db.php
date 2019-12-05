@@ -10,7 +10,6 @@
         $db can be used for CRUD operations
 */
 
-
     // Connect to the remote database
     function remote_connect() {
         // Set up .gitignore to prevent this file in git repo
